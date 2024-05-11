@@ -33,13 +33,19 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           name: ${{ env.APP_NAME }}
+      - name: Create release folder
+        run: |
+          mkdir release-files
+          mv ./${{ env.APP_NAME }}.iro ./release-files/${{env.APP_NAME }}.iro
+          ls -R
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG_VERSION=${GITHUB_REF#refs/*/}
-          gh release create $TAG_VERSION --generate-notes --latest -t "${{ env.APP_NAME }}-$TAG_VERSION" ./*
+          gh release create $TAG_VERSION --generate-notes --latest -t "${{ env.APP_NAME }}-$TAG_VERSION" ./release-files/*
