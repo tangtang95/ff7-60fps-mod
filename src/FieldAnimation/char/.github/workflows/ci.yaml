@@ -1,0 +1,51 @@
+name: CI
+
+on: [push]
+
+env:
+  APP_NAME: ff7-60fps-mod
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install iroga from crates.io
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: iroga
+          version: 0.1.2
+      - name: Build iro
+        run: iroga pack ./src --output ${{ env.APP_NAME }}.iro
+      - name: Upload iro
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APP_NAME }}
+          path: ${{ env.APP_NAME }}.iro
+          retention-days: 1
+
+  release:
+    name: Release to Github
+    needs: build
+    if: ${{ contains(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./${{ env.APP_NAME }}.iro
+      - name: Rename artifacts files
+        run: |
+          mkdir release-files
+          mv ./${{ env.APP_NAME }}.iro ./release-files/${{env.APP_NAME }}.iro
+          ls -R
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG_VERSION=${GITHUB_REF#refs/*/}
+          gh release create $TAG_VERSION --generate-notes --latest -t "${{ env.APP_NAME }}-$TAG_VERSION" ./release-files/*
