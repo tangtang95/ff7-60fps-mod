@@ -3,7 +3,7 @@
   <ID>c0d1e191-a251-465d-8a3c-a3be5366d849</ID>
   <Name>60/30 FPS Gameplay</Name>
   <Author>Vertex2995, Obesebear, Kaldarasha</Author>
-  <Version>1.13</Version>
+  <Version>1.14</Version>
   <ReleaseDate>2022-04-03</ReleaseDate>
   <Category>Animations</Category>
   <Description>This mod allows the game to run on a higher FPS than the original. It contains two possible modes: 
@@ -35,6 +35,7 @@ Changelog:
    - 1.12: Small fix for char animation FSEB.a (set frame 59 equal to frame 58). Necessary to avoid visual glitch.
               Fix 60 fps counter speed of lock inside Nibelheim Manor (field map: sinin2_1)
    - 1.13: Add optional fix for FIELD mode 60 FPS animation for kuro_4 field map (Look at README file)
+   - 1.14: Update link url to github repo
   </ReleaseNotes>
 
   <!--Folder-->
