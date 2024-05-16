@@ -1,3 +1,8 @@
+![License](https://img.shields.io/github/license/tangtang95/ff7-60fps-mod)
+![Overall Downloads](https://img.shields.io/github/downloads/tangtang95/ff7-60fps-mod/total?label=Overall%20Downloads)
+![Latest Stable Downloads](https://img.shields.io/github/downloads/tangtang95/ff7-60fps-mod/latest/total?label=Latest%20Stable%20Downloads&sort=date)
+[![CI](https://github.com/tangtang95/ff7-60fps-mod/actions/workflows/ci.yaml/badge.svg)](https://github.com/tangtang95/ff7-60fps-mod/actions/workflows/ci.yaml)
+
 # Final Fantasy VII 60 FPS Mod for 7th Heaven
 
 FF VII 60 FPS mod called `60/30 FPS Gameplay` in [7th heaven](https://github.com/tsunamods-codes/7th-Heaven). 
