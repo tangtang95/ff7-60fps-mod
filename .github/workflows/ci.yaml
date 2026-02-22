@@ -15,7 +15,7 @@ jobs:
         uses: baptiste0928/cargo-install@v3
         with:
           crate: iroga
-          version: 0.1.2
+          version: 0.4.0
       - name: Build iro
         run: iroga pack ./src --output ${{ env.APP_NAME }}.iro
       - name: Upload iro
