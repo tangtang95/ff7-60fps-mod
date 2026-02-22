@@ -86,6 +86,11 @@ Changelog:
       </And>
     </ActiveWhen>
   </ModFolder>
+  <ModFolder Folder="Compatibility">
+    <ActiveWhen>
+      <Option>FPSMode = 3</Option>
+    </ActiveWhen>
+  </ModFolder>
 
   <!--Configuration-->
 
