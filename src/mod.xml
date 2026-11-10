@@ -15,7 +15,7 @@ If you are playing FF7 without any gameplay mods, make sure to set the fix field
   </Description>
   <PreviewFile>Preview\60FPS_Logo.png</PreviewFile>
   <Link>https://github.com/tangtang95/ff7-60fps-mod</Link>
-  <ReleaseNotes>REQUIRES 7th Heaven 2.3.3+ and FFNx 1.11.0+
+  <ReleaseNotes>REQUIRES 7th Heaven 4.6.0+ and FFNx 1.11.0+
   
 Changelog:
    - 1.00: BETA Release
@@ -38,6 +38,7 @@ Changelog:
    - 1.14: Update link url to github repo
    - 1.15: Add compatibility flag support for easier 60fps enabled detection by other mods
   </ReleaseNotes>
+  <GameLanguage>ANY</GameLanguage>
 
   <!--Folder-->
   <ModFolder Folder="NinoFieldAnimation">
@@ -84,6 +85,7 @@ Changelog:
       <And>
         <Option>FPSMode = 3</Option>
         <Option>FlevelFix = 1</Option>
+        <GameLanguage>EN</GameLanguage>
       </And>
     </ActiveWhen>
   </ModFolder>
@@ -131,7 +133,7 @@ NOTE: This option affects the animations only if the FPS mode is set to "Full 60
     <Description>This option will fix 60 FPS animation glitches on few FIELD maps script (Look at README for the number of maps). The fix happens only if you are using "Full 60 FPS" mode.
 
 
-
+NOTE: This option works only with english (EN) game language
 WARNING: This option is not compatible with mods that modifies the script such as Gameplay mods (e.g. Echo-S and New Threat) and other translation mods. Look at their mod config settings to see if they support it.</Description>
     <Option Value="0" Name="false"/>
     <Option Value="1" Name="true"/>
